@@ -1,0 +1,16 @@
+name: Issue Automation
+on: 
+    issues:
+        types: [opened]
+jobs:
+    issue-opened:
+        runs-on: ubuntu-latest
+        steps:
+            - name: New Issue Opened
+              run: |
+                echo "Issue Number: ${{ github.event.issue.number }}"
+                echo "Reported by: ${{ github.event.issue.user }}"
+                echo "Assigned to: ${{ github.event.issue.assignees }}"
+                echo "Body: ${{ github.event.issue.body }}"
+                echo "Issue State: ${{ github.event.issue.body }}"
+                
