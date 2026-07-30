@@ -9,8 +9,8 @@ jobs:
             - name: New Issue Opened
               run: |
                 echo "Issue Number: ${{ github.event.issue.number }}"
-                echo "Reported by: ${{ github.event.issue.user }}"
-                echo "Assigned to: ${{ github.event.issue.assignees }}"
+                echo "Reported by: ${{ github.event.issue.user.name }}"
+                echo "Assigned to: ${{ github.event.issue.assignee.name }}"
                 echo "Body: ${{ github.event.issue.body }}"
                 echo "Issue State: ${{ github.event.issue.body }}"
                 
