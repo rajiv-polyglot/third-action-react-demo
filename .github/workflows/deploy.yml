@@ -1,0 +1,20 @@
+name: Deployment
+on: [push, workflow_dispatch]
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Linting
+              run: echo "Linting...."
+    test:
+        needs: [lint]
+        runs-on: ubuntu-latest
+        steps:
+            - name: Testing
+              run: echo "Testing...."  
+    deploy:
+        needs: [lint, test]
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploying
+              run: echo "Deploying...."
